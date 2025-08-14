@@ -141,7 +141,7 @@ input, select {
   margin: 1rem 0 2rem;
 }
 
-input:focus {
+input:focus, select:focus {
   box-shadow: 0 0 8px var(--text-color);
   background-color: rgba(255, 255, 255, 0.1);
 }
@@ -192,8 +192,7 @@ button:focus-visible {
     border-radius: 0.5rem;
     overflow: hidden;
     z-index: 1;
-
-    display: none;
+    margin-top: 2rem;
 }
 
 .info p {
@@ -319,6 +318,31 @@ button:focus-visible {
 .resultsHeader sup {
     font-weight: normal;
     font-size: 14px;
+}
+
+.pagination {
+    width: 100%;
+}
+
+.pagination span {
+    display: inline-flex;
+    height: 25px;
+    border-radius: .5rem;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    background-color: white;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+.pagination span[selected] {
+    background-color: var(--accent-color);
+    color: white;
 }
 
 @media screen and (max-width: 1024px) {

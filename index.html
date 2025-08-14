@@ -16,19 +16,24 @@
             <h2>Amazon Product Scraper</h2>
             <p>Search for products on Amazon and get detailed information</p>
             <div class="searchWrapper">
-                <input type="text" class="search-input" placeholder="Enter product keyword (e.g., wireless headphones)..." />
+                <input type="text" class="search-input" id="scrapeText" placeholder="Enter product keyword (e.g., wireless headphones)..." />
                 <select id="maxPages">
-                    <option disabled selected>Select the amount of pages</option>
                     <option value="1">1 Page</option>
                     <option value="2">2 Pages</option>
                     <option value="3">3 Pages</option>
                 </select>
             </div>
-            <button><img src="./public/shopping-cart.svg" alt="shopping-cart"><span>Search Products</span></button>
+            <button id="scrape"><img src="./public/shopping-cart.svg" alt="shopping-cart"><span>Search Products</span></button>
         </div>
 
-        <div class="resultsHeader">
+        <div class="resultsHeader hide">
             <p><img src="./public/shopping-cart.svg" alt="shopping-cart">Amazon Products <sup>(3 products found for "k")</sup></p>
+        </div>
+
+        <div class="pagination hide">
+            <span selected>1</span>
+            <span>2</span>
+            <span>3</span>
         </div>
 
         <div class="results">
@@ -37,7 +42,7 @@
                 <p>Ready to Search Amazon</p>
                 <p>Enter a product keyword to start scraping Amazon product listings</p>
             </div>
-            <div class="card">
+            <div class="card hide">
                 <img src="./public/example.jpg" alt="">
                 <p>k - Premium Quality Product with Advanced Features</p>
                 <div class="score">
