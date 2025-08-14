@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="src/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app">
+        <h1>Amazon Product Scraper</h1>
+        <p>Search for any product on Amazon and get detailed information including<br> ratings, reviews, and pricing data.</p>
+
+        <div class="searchForm">
+            <h2>Amazon Product Scraper</h2>
+            <p>Search for products on Amazon and get detailed information</p>
+            <div class="searchWrapper">
+                <input type="text" class="search-input" placeholder="Enter product keyword (e.g., wireless headphones)..." />
+                <select id="maxPages">
+                    <option disabled selected>Select the amount of pages</option>
+                    <option value="1">1 Page</option>
+                    <option value="2">2 Pages</option>
+                    <option value="3">3 Pages</option>
+                </select>
+            </div>
+            <button><img src="./public/shopping-cart.svg" alt="shopping-cart"><span>Search Products</span></button>
+        </div>
+
+        <div class="resultsHeader">
+            <p><img src="./public/shopping-cart.svg" alt="shopping-cart">Amazon Products <sup>(3 products found for "k")</sup></p>
+        </div>
+
+        <div class="results">
+            <div class="info">
+                <img src="./public/shopping-cart.svg" alt="shopping-cart">
+                <p>Ready to Search Amazon</p>
+                <p>Enter a product keyword to start scraping Amazon product listings</p>
+            </div>
+            <div class="card">
+                <img src="./public/example.jpg" alt="">
+                <p>k - Premium Quality Product with Advanced Features</p>
+                <div class="score">
+                    <span class="star"><img src="./public/star.svg" alt="full-star-review"></span>
+                    <span class="star"><img src="./public/star.svg" alt="full-star-review"></span>
+                    <span class="star"><img src="./public/star.svg" alt="full-star-review"></span>
+                    <span class="star"><img src="./public/star.svg" alt="full-star-review"></span>
+                    <span class="star"><img src="./public/star-half.svg" alt="half-star-review"></span>
+                    <span>(4.5)</span>
+                </div>
+                <div class="reviews">
+                    <img src="./public/message-bubble.svg" alt="message-bubble">
+                    <span>2,897</span>
+                    <span>reviews</span>
+                </div>
+                <hr />
+                <a href="#"><img src="./public/link.svg" alt="link-icon"> View on Amazon</a>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

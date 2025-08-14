@@ -1,0 +1,341 @@
+:root {
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    --accent-color: #5a97f8;
+    --text-color: hsl(215.4 16.3% 46.9%);
+    --body-color: #dfecf4;
+}
+
+*::before,
+*::after,
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    font-weight: 500;
+    color: #646cff;
+    text-decoration: inherit;
+}
+a:hover {
+    color: #535bf2;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+    background-color: var(--body-color);
+}
+
+h1 {
+    color: var(--accent-color);
+    font-size: 3.2em;
+    line-height: 1.1;
+}
+
+#app {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+  z-index: 1;
+}
+
+#app::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../public/background.png");
+  background-position: center center;
+  background-size: cover;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+#app p {
+    color: var(--text-color);
+}
+
+#app > p:first-of-type {
+    margin-top: 1rem;
+    color: var(--text-color);
+    font-size: 20px;
+}
+
+.searchForm, .results {
+    background-color: white;
+    width: 50%;
+    margin: auto;
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: .5rem;
+}
+
+.searchWrapper {
+    display: flex;
+    width: 100%;
+}
+
+.searchWrapper > input {
+    width: 60%;
+}
+
+.searchWrapper > select {
+    width: 30%;
+}
+
+.results {
+    position: relative;
+    background-color: transparent;
+    margin: auto;
+    padding: 0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.results > * {
+    position: relative;
+    z-index: 1;
+}
+
+.searchForm > * {
+    display: block;
+}
+
+.searchForm h2 {
+    font-size: 30px;
+    color: var(--accent-color);
+}
+
+input, select {
+  background-color: rgba(255, 255, 255, 0.05);
+  font-size: 0.9rem;
+  color: var(--text-color);
+  padding: 1rem;
+  border: none;
+  outline: none;
+  box-shadow: 1px 1px 5px lightgray;
+  border-radius: 0.5rem;
+  transition: box-shadow 0.2s ease, background-color 0.2s ease;
+  margin: 1rem 0 2rem;
+}
+
+input:focus {
+  box-shadow: 0 0 8px var(--text-color);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.searchForm > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .2rem;
+}
+
+button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 18px;
+    font-weight: 500;
+    width: 100%;
+    font-family: inherit;
+    background-color: var(--accent-color);
+    color: white;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+button:hover {
+    border-color: var(--accent-color);
+}
+button:focus,
+button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+}
+
+.results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 300px);
+    gap: 1rem;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    background-color: transparent;
+    width: 100%;
+    margin: auto;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    z-index: 1;
+
+    display: none;
+}
+
+.info p {
+    position: relative;
+    z-index: 1;
+}
+
+.info::before {
+    content: "";
+    position: absolute;
+    background-color: white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    z-index: 0;
+}
+
+.info img {
+    filter: brightness(0) saturate(100%) invert(36%) sepia(0%) saturate(0%) hue-rotate(207deg) brightness(96%) contrast(90%);
+    height: 3rem;
+}
+
+.info p:first-of-type {
+    font-weight: bold;
+    color: black;
+    font-size: 1.2rem;
+}
+
+.card {
+    background-color: white;
+    border-radius: .5rem;
+}
+
+.card > img:first-of-type {
+    margin: 1rem;
+    height: 50%;
+    border-radius: .5rem;
+}
+
+.card p {
+    text-align: left;
+    font-weight: bold;
+    margin-left: 1rem;
+    font-size: 16px;
+}
+
+.score {
+    color: var(--text-color);
+    display: flex;
+    margin: 10px 1rem;
+    justify-content: left;
+    font-size: 14px;
+}
+
+.score span:last-of-type {
+    margin-left: .5rem;
+}
+
+.score img {
+    filter: brightness(0) saturate(100%) invert(83%) sepia(55%) saturate(2697%) hue-rotate(349deg) brightness(110%) contrast(96%);
+    height: 20px;
+}
+
+.reviews {
+    display: flex;
+    margin: 0 1rem;
+    justify-content: left;
+    gap: 5px;
+    font-size: 14px;
+    align-items: center;
+    color: var(--text-color)
+}
+
+.reviews img {
+    filter: brightness(0) saturate(100%) invert(55%) sepia(4%) saturate(6%) hue-rotate(35deg) brightness(97%) contrast(92%);
+    height: 20px;
+    margin-right: .2rem;
+}
+
+.card hr {
+    margin: 10px 1rem;
+}
+
+.card a {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 5px;
+    margin: 10px 1rem 0;
+    text-align: left;
+    filter: brightness(0) saturate(100%) invert(47%) sepia(85%) saturate(1043%) hue-rotate(197deg) brightness(104%) contrast(94%);
+}
+
+.card > span:last-of-type {
+    display: block;
+    margin-top: .5rem;
+    color: var(--text-color);
+}
+
+.resultsHeader {
+    width: 50%;
+    margin: 1.5rem auto 1rem;
+    justify-content: left;
+}
+
+.resultsHeader p {
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    font-size: 24px;
+    font-weight: bold;
+    gap: 5px;
+}
+
+.resultsHeader img {
+    filter: brightness(0) saturate(100%) invert(47%) sepia(85%) saturate(1043%) hue-rotate(197deg) brightness(104%) contrast(94%);
+    height: 1.5rem;
+    margin-right: .2rem;
+}
+
+.resultsHeader sup {
+    font-weight: normal;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 1024px) {
+    .searchForm, .results {
+        width: 100%;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+            color: #213547;
+            background-color: #ffffff;
+    }
+    a:hover {
+            color: #747bff;
+    }
+    button {
+            background-color: #f9f9f9;
+    }
+}
